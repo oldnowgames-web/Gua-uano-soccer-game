@@ -1,0 +1,276 @@
+* { 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+    user-select: none;
+    -webkit-user-select: none;
+} 
+
+body {
+    background-color: #080808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Container Principal */
+.game-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 90vh;
+    max-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- TELA DE START (CRICIÚMA) --- */
+.container-start { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 60;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    background: linear-gradient(to bottom, rgb(0, 34, 0), rgb(72, 121, 0)); 
+    padding: 20px; 
+    text-align: center; 
+    border-radius: 20px;
+    overflow: hidden;
+} 
+
+.container-start h1 { 
+    font-size: 3.2rem; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: white; 
+    margin: 10px 0 5px 0; 
+    text-transform: uppercase; 
+    -webkit-text-stroke: 2px black; 
+} 
+
+.container-start h5 { 
+    font-size: 1.3rem; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: white; 
+    margin-bottom: 25px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+} 
+
+.container-start img { 
+    width: 25vh; 
+    height: 25vh; 
+    max-width: 220px; 
+    max-height: 220px;
+    object-fit: contain;
+} 
+
+.start-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.container-start button { 
+    width: 160px; 
+    height: 45px; 
+    background-color: black; 
+    color: white; 
+    border-radius: 12px; 
+    font-size: 0.9em; 
+    border: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: transform 0.1s ease, background-color 0.2s ease; 
+} 
+
+.container-start button:hover { 
+    transform: scale(1.08); 
+    background-color: #222;
+}
+
+/* --- TELA DE SELEÇÃO DE MODO --- */
+#menu-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 17, 24, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#menu-screen h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+#menu-screen p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.menu-btn {
+    width: 80%;
+    max-width: 280px;
+    padding: 16px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.btn-treino {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+
+.btn-competitivo {
+    background: linear-gradient(135deg, #FF9800, #E65100);
+    color: white;
+}
+
+.menu-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* --- PLACAR SUPERIOR --- */
+#scoreboard {
+    position: absolute;
+    top: 15px;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.score-gols { color: #4CAF50; }
+.score-erros { color: #FF5252; }
+.score-vento { color: #81D4FA; }
+
+.score-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 5px 7px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.score-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* --- CANVAS 3D --- */
+#canvas-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+}
+
+/* --- FEEDBACK --- */
+#feedback {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 16px;
+    z-index: 30;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+#feedback.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+#feedback.gol { background-color: #4CAF50; color: #ffffff; }
+#feedback.erro { background-color: #FF5252; color: #ffffff; }
+#feedback.trave { background-color: #FF9800; color: #ffffff; }
+#feedback.defesa { background-color: #00BCD4; color: #ffffff; }
+
+/* --- REGRAS RESPONSIVAS --- */
+@media (max-width: 768px) {
+    .container-start h1 { 
+        font-size: 2.2rem; 
+        -webkit-text-stroke: 1.5px black; 
+        margin: 15px 0 5px 0;
+    } 
+
+    .container-start h5 { 
+        font-size: 1.1rem; 
+        margin-bottom: 20px;
+    } 
+
+    .container-start img { 
+        width: 20vh; 
+        height: 20vh; 
+    } 
+}
+
+
+
+
+@media (max-width: 400px) {
+    .container-start h1 { 
+        font-size: 1.8rem; 
+    }
+}

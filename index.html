@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Criciúma Soccer Game - Pênalti 3D</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <div id="start-screen" class="container-start">
+            <img src="img/guacuano_logo.png" alt="Criciúma-logo">
+            <h1 translate="no">Guaçuano Soccer Game</h1>
+            <h5 translate="no">Clube atlético Guaçuano</h5>
+            
+            <div class="start-btn-group">
+                <button id="play-btn">PLAY</button>
+                <button id="start-fullscreen-btn">⛶ TELA CHEIA</button>
+            </div>
+        </div>
+
+        <div id="menu-screen" style="display: none;">
+            <h1>⚽ Modo de Jogo</h1>
+            <p>Escolha como deseja jogar</p>
+            <button class="menu-btn btn-treino" onclick="startGame('treino')">🏋️ Modo Treino</button>
+            <button class="menu-btn btn-competitivo" onclick="startGame('competitivo')">🏆 Modo Competitivo</button>
+        </div>
+
+        <div id="scoreboard">
+            <div class="score-item score-gols">⚽ <span id="gols-count">0</span></div>
+            <div class="score-item score-erros">❌ <span id="erros-count">0</span></div>
+            <div class="score-item score-vento">💨 <span id="wind-count">0 km/h</span></div>
+            <button id="reset-ball-btn" class="score-btn">⚽ Repor</button>
+            <button id="reset-btn" class="score-btn">🔄 Zerar</button>
+            <button id="game-fullscreen-btn" class="score-btn">⛶ Full</button>
+            <button id="menu-btn" class="score-btn">🏠 Menu</button>
+        </div>
+
+        <div id="feedback"></div>
+
+        <div id="canvas-container"></div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
