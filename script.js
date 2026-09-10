@@ -181,7 +181,7 @@ scene.add(ball);
 
 // Caminho do modelo .glb da bola — coloque o arquivo em "models/bola.glb"
 // (na mesma pasta do index.html, dentro de uma pasta "models")
-const BALL_MODEL_PATH = 'models/bola.glb';
+const BALL_MODEL_PATH = 'model/ball.glb';
 
 const gltfLoader = new THREE.GLTFLoader();
 gltfLoader.load(
