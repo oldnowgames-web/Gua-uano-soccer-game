@@ -98,6 +98,79 @@ body {
     background-color: #222;
 }
 
+#history-btn {
+    width: 220px;
+    height: auto;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 0.85em;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* --- TELA DE HISTÓRIA DO CLUBE --- */
+#history-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 12, 10, 0.97);
+    backdrop-filter: blur(10px);
+    z-index: 55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    padding: 24px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#history-screen h1 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.history-text {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    text-align: left;
+    padding: 0 6px;
+}
+
+.history-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 14px;
+}
+
+.mascot-img {
+    display: block;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    margin: 4px auto 10px auto;
+    object-fit: contain;
+}
+
+
+.btn-voltar {
+    background: #333;
+    color: white;
+}
+
+#history-screen .menu-btn {
+    margin-top: 16px;
+    flex-shrink: 0;
+    width: 80%;
+    max-width: 280px;
+}
+
 /* --- TELA DE SELEÇÃO DE MODO --- */
 #menu-screen {
     position: absolute;
@@ -178,9 +251,16 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
     display: none;
     align-items: center;
-    gap: 6px;
-    font-size: 11px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 92%;
+    gap: 5px;
+    font-size: 10.5px;
     font-weight: bold;
+}
+
+#scoreboard.modo-treino .only-competitivo {
+    display: none;
 }
 
 .score-item {
@@ -192,6 +272,10 @@ body {
 .score-gols { color: #4CAF50; }
 .score-erros { color: #FF5252; }
 .score-vento { color: #81D4FA; }
+.score-streak { color: #FF9800; }
+.score-best { color: #FFD54F; }
+.score-aprov { color: #B39DDB; }
+.score-conditions { color: #E1F5FE; font-size: 13px; }
 
 .score-btn {
     background: rgba(255, 255, 255, 0.2);
@@ -272,5 +356,17 @@ body {
 @media (max-width: 400px) {
     .container-start h1 { 
         font-size: 1.8rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    #scoreboard {
+        font-size: 9.5px;
+        gap: 4px;
+        padding: 6px 8px;
+    }
+    .score-btn {
+        padding: 4px 6px;
+        font-size: 9px;
     }
 }

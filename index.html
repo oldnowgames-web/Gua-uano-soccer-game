@@ -6,6 +6,7 @@
     <title>Guaçuano Soccer Game - Pênalti 3D</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
 
@@ -17,8 +18,20 @@
             
             <div class="start-btn-group">
                 <button id="play-btn">PLAY</button>
+                <button id="history-btn">📜 História do Clube</button>
                 <button id="start-fullscreen-btn">⛶ TELA CHEIA</button>
             </div>
+        </div>
+
+        <div id="history-screen" style="display: none;">
+            <h1>📜 História do Clube</h1>
+            <div class="history-text">
+                <p>O Clube Atlético Guaçuano foi fundado em 26 de fevereiro de 1929 em Mogi Guaçu, São Paulo, inicialmente com o nome de Chaminé Clube. Conhecido pelas cores verde e branca e pelo mascote Mandi, o time iniciou sua trajetória no futebol amador regional.</p>
+                <p>A profissionalização ocorreu em 1975, quando estreou nas competições da Federação Paulista de Futebol (FPF). Seus principais títulos foram as conquistas da segunda divisão paulista em 1975 e 1977, além da Série B2 em 1981.</p>
+                <p>Com mais de 30 participações em torneios de acesso estaduais, o clube manda seus jogos no Estádio Municipal Alexandre Augusto Camacho. Atualmente, após períodos de licenciamento, o Guaçuano foca no resgate de sua memória esportiva e na forte ligação com a comunidade local.</p>
+                <img src="img/mandi.png" alt="Mandi, mascote do Guaçuano" class="mascot-img">
+            </div>
+            <button class="menu-btn btn-voltar" id="history-back-btn">⬅ Voltar</button>
         </div>
 
         <div id="menu-screen" style="display: none;">
@@ -31,7 +44,11 @@
         <div id="scoreboard">
             <div class="score-item score-gols">⚽ <span id="gols-count">0</span></div>
             <div class="score-item score-erros">❌ <span id="erros-count">0</span></div>
+            <div class="score-item score-streak only-competitivo">🔥 <span id="streak-count">0</span></div>
+            <div class="score-item score-best only-competitivo">🏆 <span id="best-streak-count">0</span></div>
+            <div class="score-item score-aprov only-competitivo">📈 <span id="aproveitamento-count">0%</span></div>
             <div class="score-item score-vento">💨 <span id="wind-count">0 km/h</span></div>
+            <div class="score-item score-conditions"><span id="conditions-icon">☀️</span></div>
             <button id="reset-ball-btn" class="score-btn">⚽ Repor</button>
             <button id="reset-btn" class="score-btn">🔄 Zerar</button>
             <button id="game-fullscreen-btn" class="score-btn">⛶ Full</button>
